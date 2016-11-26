@@ -72,7 +72,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 /* IMF - Reference a secure file for databse settings to avoid putting the passwords in the Git Repo */
-<? include_once ($_SERVER['DOCUMENT_ROOT']."../../secure/codeigniter_database.php") ?>
+/* uses secure directory located above public_html */
+<? include_once (substr($_SERVER["DOCUMENT_ROOT"], 0, stripos ($_SERVER["DOCUMENT_ROOT"],"public_html")) ."secure/codeigniter_database.php") ?>
 
 /*
 $active_group = 'default';
