@@ -25,10 +25,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 /* Check if we are on the development server or the live server IMF */
-if (strpos(dirname(__FILE__),'MAMP') > 0) {
-	$config['base_url'] = 'http://localhost:8888/';
+if (strpos(dirname(__FILE__),'Documents') > 0) {
+	$config['base_url'] = 'https://localhost:8890/';
 } else {
-	$config['base_url'] = 'https://bitsworkshop.org/';
+	if (strpos($_SERVER['SERVER_NAME'],'testconxchina') > 0){
+		$config['base_url'] = 'https://www.testconxchina.org/';
+	} else{
+		$config['base_url'] = 'https://bitsworkshop.org/';
+	}
 }
 
 /*
